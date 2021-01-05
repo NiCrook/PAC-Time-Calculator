@@ -18,7 +18,7 @@ TKinter
 ```
 while index != len(entry_gets):
     total_time += int(list(entry_gets.values())[index])
-        index += 1
+    index += 1
 ```
 
 # Usage
