@@ -122,7 +122,7 @@ class PACFrame(tk.Frame):
             index += 1
             # print(total_time)
 
-        # convert time to hours than days, rounded out
+        # convert time to hours then days, rounded out
         total_time = (total_time / 60)
         total_time = (total_time / 24)
         total_time = round(total_time, 2)
