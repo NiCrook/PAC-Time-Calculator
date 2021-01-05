@@ -58,7 +58,7 @@ class PACFrame(tk.Frame):
             "3 hr": tk.Label(self, text="3 hr:"),
             "8 hr": tk.Label(self, text="8 hr:"),
             "24 hr": tk.Label(self, text="24 hr:"),
-            "total time": tk.Label(self, text="Total Time:"),
+            "total time": tk.Label(self, text="# of days:"),
             "calculated time": tk.Label(self, textvariable=self.total_time_text)
         }
 
@@ -102,6 +102,7 @@ class PACFrame(tk.Frame):
     def calculate_time(self):
         # set total_time
         total_time = 0
+        index = 0
         # get each entry and convert to total minutes
         entry_gets = {
             "1 min": self.entries["1 min"].get(),
@@ -115,15 +116,17 @@ class PACFrame(tk.Frame):
             "24 hr": (int(self.entries["24 hr"].get()) * 1440),
         }
 
-        # sums up each entered time
-        for time in entry_gets.values():
-            total_time += int(time)
-            print(time)
+        # sum up time
+        while index != len(entry_gets):
+            total_time += int(list(entry_gets.values())[index])
+            index += 1
+            # print(total_time)
+
         # convert time to hours than days, rounded out
         total_time = (total_time / 60)
         total_time = (total_time / 24)
         total_time = round(total_time, 2)
-        print(str(total_time))
+        # print(str(total_time))
         self.total_time_text.set(total_time)
 
 
