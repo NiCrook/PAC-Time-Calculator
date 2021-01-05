@@ -8,7 +8,7 @@ Because I'm a nerd and you should be, too.
 Version 1.02
 
 # Demo
-placeholder
+![](pacpy.gif)
 
 # Built With
 Python
